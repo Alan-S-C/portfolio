@@ -13,6 +13,8 @@ body {
 header {
     /* Imagen de fondo del encabezado */
     background-image: url(fondo.png);
+    /* Tamaño del fondo */
+    background-size: cover;
     /* Color del texto en el encabezado */
     color: #fff;
     /* Relleno interno del encabezado */
