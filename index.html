@@ -22,7 +22,6 @@
     <!-- Barra de navegación con enlaces -->
     <nav>
         <ul>
-            <li class="btn" ><a href="#">Home</a></li>
             <li class="btn" ><a href="#">About me</a></li>
             <li class="btn" ><a href="#">Contact</a></li>
         </ul>
@@ -33,17 +32,61 @@
             <video autoplay muted loop class= "video_fondo">
             <source src="video_dondo.mp4" type="video/mp4">
             </video>
-            <div class="margen">
-                <div class="intro_text">
-                    <h2>Hola, me llamo Alan</h2>
-                    <p>Soy un motion designer y me gusta hacer cosas en 3D.</p>
+            <div class="intro_text">
+                    <h2>3D MODELING & ANIMATION</h2>
+            </div>
+            <div class="">
+                
+                <div class="slider-container">
+                    <div class="slider-content">
+                        <div class="slider-item">
+                            <img src="ej1.png" alt="Imagen 1">
+                        </div>
+                        <div class="slider-item">
+                            <img src="ej2.png" alt="Imagen 2">
+                        </div>
+                        <div class="slider-item">
+                            <img src="ej3.png" alt="Imagen 3">
+                        </div>
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    
+                    <script>
+                        let slideIndex = 0;
+                        showSlides();
+
+                        function plusSlides(n) {
+                        slideIndex += n;
+                        showSlides();
+                        }
+
+                        function showSlides() {
+                        const slides = document.querySelectorAll(".slider-item");
+                        if (slideIndex >= slides.length) {
+                        slideIndex = 0;
+                        }
+                        if (slideIndex < 0) {
+                        slideIndex = slides.length - 1;
+                        }
+                        slides.forEach((slide, index) => {
+                        slide.style.display = index === slideIndex ? "block" : "none";
+                        });
+                        setTimeout(() => {
+                        slideIndex++;
+                        showSlides();
+                        }, 1000 * 300); // Cambia la imagen cada 2 segundos
+                        }
+                    </script>
+                    
                 </div>
+                
             </div>
        </div>
     </main>
     <!-- Pie de página del sitio -->
     <footer>
-        <p>&copy; 2024 alanscv</p>
+        <p>&copy; 2024 alanscv. All Rights Reserved. </p>
     </footer>
 </body>
 </html>

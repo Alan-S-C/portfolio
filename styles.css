@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
     /* Color de fondo del sitio web */
-    background-color: #f4f4f4;
+    background-color: black;
 }
 
 /* Estilos para el encabezado */
@@ -77,27 +77,25 @@ footer {
     /* Relleno interno del pie de página */
     padding: 1rem 0;
     /* Fija el pie de página en la parte inferior de la página */
-    position: fixed;
+    position: flex;
     bottom: 0;
     width: 100%;
 }
 
-.video_fondo{
-    position: fixed;
-    right: 0;
+.video_fondo {
+    position: flex;
     max-width: 100%;
 }
 
-.intro_text{
-    position: fixed;
-    background: rgba(0, 0, 0, 0.7);
-    background-size: cover;
+.intro_text {
+    display: grid;
+    
+    background: rgba(0, 0, 0, 0.5);
     color: #f1f1f1;
-    width: 96%;
-    padding: 20px;
+    
 }
 
-.btn{
+.btn {
     width: 200px;
     font-size: 18px;
     padding: 10px;
@@ -113,7 +111,48 @@ footer {
     color: black;
 }
 
-.margen{
-    position: fixed;
-    padding: 1%;
+/* SLIDER */
+.slider-container {
+        max-width: 100%;
+        margin: 0 auto;
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        }
+
+.slider-content {
+        display: flex;
+        transition: transform 1s ease;
+        width: 300%; /* Ajusta el ancho según el número de imágenes */
+        }
+
+.slider-item {
+        flex: 0 0 100%; /* Cada imagen ocupa el 100% del contenedor */
+        }
+
+.slider-item img {
+        max-width: 700px; /* Las imágenes se ajustan al ancho del contenedor */
+        max-height: 700px;        
 }
+
+.prev, .next {
+        cursor: pointer;
+        position: absolute;
+        align-self: auto;
+        margin: 0 auto;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+.next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+.prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
