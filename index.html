@@ -1,92 +1,59 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <!-- Especifica el tipo de documento y la versión de HTML -->
     <meta charset="UTF-8">
-    <!-- Configura el viewport para que el sitio sea responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Título de la página que aparece en la pestaña del navegador -->
-    <title>alanscv</title>
-    <!-- STYLESHEET -->
+    <title>3D Modeling & Animation</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Fuente del encabezado -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-</head>
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
+    </head>
 <body>
-    <!-- Sección de encabezado del sitio -->
     <header>
-        <h1 class="righteous-regular">alanscv</h1>
+        <nav>
+            <div class="logo">alansc</div>
+            <ul>
+                <li class="btn"><a href="about_me.html">About Me</a></li>
+                <li class="btn"><a href="https://linktr.ee/alansc">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <!-- Barra de navegación con enlaces -->
-    <nav>
-        <ul>
-            <li class="btn" ><a href="#">About me</a></li>
-            <li class="btn" ><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-    <!-- Contenido principal de la página -->
-    <main>
-       <div>
-            <video autoplay muted loop class= "video_fondo">
-            <source src="video_dondo.mp4" type="video/mp4">
-            </video>
-            <div class="intro_text">
-                    <h2>3D MODELING & ANIMATION</h2>
-            </div>
-            <div class="">
-                
-                <div class="slider-container">
-                    <div class="slider-content">
-                        <div class="slider-item">
-                            <img src="ej1.png" alt="Imagen 1">
-                        </div>
-                        <div class="slider-item">
-                            <img src="ej2.png" alt="Imagen 2">
-                        </div>
-                        <div class="slider-item">
-                            <img src="ej3.png" alt="Imagen 3">
-                        </div>
-                    </div>
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                    
-                    <script>
-                        let slideIndex = 0;
-                        showSlides();
 
-                        function plusSlides(n) {
-                        slideIndex += n;
-                        showSlides();
-                        }
-
-                        function showSlides() {
-                        const slides = document.querySelectorAll(".slider-item");
-                        if (slideIndex >= slides.length) {
-                        slideIndex = 0;
-                        }
-                        if (slideIndex < 0) {
-                        slideIndex = slides.length - 1;
-                        }
-                        slides.forEach((slide, index) => {
-                        slide.style.display = index === slideIndex ? "block" : "none";
-                        });
-                        setTimeout(() => {
-                        slideIndex++;
-                        showSlides();
-                        }, 1000 * 300); // Cambia la imagen cada 2 segundos
-                        }
-                    </script>
-                    
-                </div>
-                
+    <div class="content">
+        <video autoplay muted loop id="background-video">
+            <source src="video_fondo.mp4" type="video/mp4"/>
+            Your browser does not support the video tag.
+        </video>
+        <div class="text-overlay">
+            <h1>3D MODELING & ANIMATION</h1>
+        </div>
+        <div class="slider-container">
+            <div class="slider">
+                <div><img src="ej1.png" alt="Slide 1"></div>
+                <div><img src="ej2.png" alt="Slide 2"></div>
+                <div><img src="ej3.png" alt="Slide 3"></div>
             </div>
-       </div>
-    </main>
-    <!-- Pie de página del sitio -->
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2024 alanscv. All Rights Reserved. </p>
+        <p>© 2024 alanscv. All Rights Reserved.</p>
     </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Slider JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                arrows: true,
+                autoplay: true,
+                autoplaySpeed: 3000,
+            });
+        });
+    </script>
 </body>
 </html>
