@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>alansc</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">alansc</div>
+                <ul>
+                    <li class="btn"><a href="index.html">Home</a></li>
+                    <li class="btn"><a href="https://linktr.ee/alansc">Contact</a></li>
+                    <li class="btn"><a href="about_me.html">About Me</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content_gal">
+            <div class="gallery">
+                <!-- Gallery (Add images as needed) -->
+                <img src="ej1.png" alt="Image 1" />
+                <img src="ej2.png" alt="Image 2" />
+                <img src="ej3.png" alt="Image 3" />
+                <img src="ej4.png" alt="Image 3" />
+                <img src="ej5.png" alt="Image 3" />
+            </div>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01"/>
+            </div>
+
+            <script>
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                // Get the images and insert them inside the modal
+                var imgs = document.querySelectorAll(".gallery img");
+                var modalImg = document.getElementById("img01");
+
+                imgs.forEach((img) => {
+                    img.onclick = function () {
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    };
+                });
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal.style.display = "none";
+                };
+            </script>
+        </div>
+        <footer>
+            <p>© 2024 alanscv. All Rights Reserved.</p>
+        </footer>
+    </body>
+</html>
